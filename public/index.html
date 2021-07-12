@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+     <title>Meet Up</title> 
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script> -->
+    <link href="/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div id="main-container" style="display: flex; height:auto; max-height:620px;">
+        <div id="dashboard" style="display: flex; width:20% ;height:auto">
+            <h1 id="head" style="margin:0px 0px 100px 0px ">Meet Up</h1>
+            <br>
+            <h2 style="padding: 0px;margin:0px">Your Personal Code</h2>
+            <div id="personal-code-caontainer" style="display: inline-flex;">
+                <input id="personal-code" placeholder="User Code"></input>
+                <button id="Copy" style="    width: 4vw; height: 3vw;">
+                    <img src="./images/copyButton.png" id="copy-button"
+                        style="width: 3vw; height: 2vw"></button>
+            </div>
+           <h2 style="margin:70px 0px 0px 0px;padding: 0px;">Enter Personal Code Of Other User</h2>
+            <input id="input-personal-code" type="text" placeholder="Personal Code" style="width:16vw; height: 3vw;" />
+
+            <div id="call-Container">
+                <button class="call-making-button" id="chat-button" ><img
+                        src="./images/chatButton.png" style="width:6vw;"></button>
+                <button class="call-making-button" id="video-button"><img
+                        src="./images/videoButton.png"  style="width: 10vw;"></button>
+            </div>
+           
+        </div>
+        <div id="video-container">
+            <div id="video-chat-room" style="max-width: 100%;">
+                <video id="user-video" style="max-width:100%;height:auto;  border-radius: 25px; padding :15px;
+               "></video>
+                <div id=remote-user>
+                    <video id="peer-video"
+                        style="max-width:100% ;height:auto; display:none; border-radius: 25px; padding :15px; "></video>
+                </div>
+                <div id="icons" class='call_buttons_container'>
+              
+                    <button class=' image '  id='mute'>
+                        <img src='./images/mic.png' id='mic_button_image'></img>
+                    </button>
+
+                    <button class='image ' style="display:none" id='end-chat'>
+                        <img src='./images/icons8-no-chat-48.png'></img>
+                    </button>
+
+                 
+                    <button class='image '  id='hide'>
+                        <img src='./images/camera.png' id='camera_button_image'></img>
+
+
+                        
+                    <button class='image ' style="display:none" id='end-call'>
+                        <img src='./images/hangUp.png'></img>
+                    </button>
+
+                        <button class='screen ' style="display:none" id='screenShare'>
+                            <img src='./images/switchCameraScreenSharing.png' id='screenShare_button_image'></img>
+
+                            <button class='call_button_small' style="display: none"; id ='start_recording_button'>
+                                <img src='./images/recordingStart.png'></img>
+                            </button>
+                       
+                            <div class='recording-stream-container-buttons ' style="display:none;"
+                                id='recording-stream-buttons'>
+                                <button id='pause-button' style="display: none;">
+                                    <img src='./images/pause.png'></img>
+                                </button>
+                                <button id='resume-button' style="display:none;">
+                                    <img src='./images/resume.png'></img>
+                                </button>
+                                <button id='stop-button' style="display: none;">
+                                    Stop recording
+                                </button>
+                            </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div id=chatting-container style="width: 25vw;">
+            <div id="chat-container" style="width:100%  ;display:none;max-width: 100%;">
+                <h3 class="text">Chat</h3>
+                <input id="username" type="text" placeholder="Username" style="size:auto; padding: 15px;" />
+                <div id="chat-window">
+                    <div id="output" style="max-width: 100%;"></div>
+                </div>
+                <div id="send-message-container">
+                    <input id="message-input" type="text" placeholder="Message" style="width: 600%;" />
+                    <button class="send-button" id="send" style="background: #9e9e9e; border: revert;">
+                        <img src="./images/send (1).png" id="send-button-image">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='call-box'></div>
+
+    </div>
+
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="./javascipt/balancer.js" type='module'></script>
+<script src="./javascipt/chat.js" type='module'></script>
+
+</html>
