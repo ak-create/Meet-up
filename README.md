@@ -1,7 +1,7 @@
 https://meet-up-web-app.herokuapp.com/
 Meet up Web App link
 
-This is a person to person Video calling chat web app 
+This is a person to person Video calling chat web app with
 Some main Features are:-
 1) Mute/Unmute mic
 2) Hide/Unhide Camera stream
